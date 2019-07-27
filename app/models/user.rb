@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   enum role: ['default', 'merchant_admin', 'admin']
+
+  def address_names
+    addresses.pluck(:address_name)
+  end
 end

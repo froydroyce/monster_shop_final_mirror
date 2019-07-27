@@ -9,8 +9,13 @@ class User::OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
   end
 
+  def new
+    @user = current_user
+    @order = Order.new
+  end
+
   def create
-    order = current_user.orders.new
+    order = current_user.orders.new(order_params)
     order.save
       cart.items.each do |item|
         order.order_items.create({
@@ -28,5 +33,11 @@ class User::OrdersController < ApplicationController
     order = current_user.orders.find(params[:id])
     order.cancel
     redirect_to "/profile/orders/#{order.id}"
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:user_id, :address_id)
   end
 end
