@@ -1,0 +1,7 @@
+<h1>Please choose a shipping address</h1>
+<%= form_for @order do |f| %>
+  <%= f.label :address_id, 'Address name' %>
+  <%= f.select :address_id, options_for_select(@user.address_names) %>
+
+  <%= f.submit 'Submit Order' %>
+<% end %>

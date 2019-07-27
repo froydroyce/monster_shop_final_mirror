@@ -22,10 +22,12 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update]
   patch '/user/:id', to: 'users#update'
   get '/profile', to: 'users#show'
+  get '/profile/addresses', to: 'user/addresses#index'
   get '/profile/edit', to: 'users#edit'
   get '/profile/edit_password', to: 'users#edit_password'
   post '/orders', to: 'user/orders#create'
   get '/profile/orders', to: 'user/orders#index'
+  get '/profile/orders/new', to: 'user/orders#new'
   get '/profile/orders/:id', to: 'user/orders#show'
   delete '/profile/orders/:id', to: 'user/orders#cancel'
 

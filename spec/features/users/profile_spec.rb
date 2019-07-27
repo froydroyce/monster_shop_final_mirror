@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe "User Profile Path" do
   describe "As a registered user" do
     before :each do
-      @user = User.create!(name: 'Megan', address: '123 Main St', city: 'Denver', state: 'CO', zip: 80218, email: 'megan@example.com', password: 'securepassword')
-      @admin = User.create!(name: 'Megan', address: '123 Main St', city: 'Denver', state: 'CO', zip: 80218, email: 'admin@example.com', password: 'securepassword')
+      @user = User.create!(name: 'Megan', email: 'megan@example.com', password: 'securepassword')
+      @admin = User.create!(name: 'Megan', email: 'admin@example.com', password: 'securepassword')
+      @user_address = @user.addresses.create!(address_name: "Home", address: "1234 Main st", city: "Denver", state: "CO", zip: 80229)
+      @admin_address = @admin.addresses.create!(address_name: "Home", address: "2345 Main st", city: "Denver", state: "IA", zip: 80210)
     end
 
     it "I can view my profile page" do
@@ -13,10 +15,9 @@ RSpec.describe "User Profile Path" do
 
       expect(page).to have_content(@user.name)
       expect(page).to have_content(@user.email)
-      expect(page).to have_content(@user.address)
-      expect(page).to have_content("#{@user.city} #{@user.state} #{@user.zip}")
       expect(page).to_not have_content(@user.password)
       expect(page).to have_link('Edit')
+      expect(page).to have_link('My Addresses')
     end
 
     it "I can update my profile data" do
@@ -32,17 +33,9 @@ RSpec.describe "User Profile Path" do
 
       name = 'New Name'
       email = 'new@example.com'
-      address = '124 new str'
-      city = 'new town'
-      state = 'NY'
-      zip = '12034'
 
       fill_in "Name", with: name
       fill_in "Email", with: email
-      fill_in "Address", with: address
-      fill_in "City", with: city
-      fill_in "State", with: state
-      fill_in "Zip", with: zip
       click_button 'Update Profile'
 
       expect(current_path).to eq(profile_path)
@@ -50,8 +43,6 @@ RSpec.describe "User Profile Path" do
       expect(page).to have_content('Profile has been updated!')
       expect(page).to have_content(name)
       expect(page).to have_content(email)
-      expect(page).to have_content(address)
-      expect(page).to have_content("#{city} #{state} #{zip}")
     end
 
     it "I can update my password" do
@@ -102,7 +93,7 @@ RSpec.describe "User Profile Path" do
       fill_in "Email", with: @admin.email
       click_button "Update Profile"
 
-      expect(page).to have_content("email: [\"has already been taken\"]")
+      expect(page).to have_content("Email has already been taken")
       expect(page).to have_button "Update Profile"
     end
   end

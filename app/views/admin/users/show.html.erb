@@ -1,1 +1,3 @@
 <%= render '/users/address' %>
+
+<%= link_to "#{@user.name}'s Addresses", "/admin/users/#{@user.id}/addresses" %>
