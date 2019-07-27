@@ -15,7 +15,9 @@ class User::OrdersController < ApplicationController
   end
 
   def create
-    order = current_user.orders.new(order_params)
+    binding.pry
+    address = current_user.find_address_by_name(order_params[:address_id])
+    order = current_user.orders.new(address_id: address.id)
     order.save
       cart.items.each do |item|
         order.order_items.create({
@@ -38,6 +40,6 @@ class User::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:user_id, :address_id)
+    params.require(:order).permit(:address_id)
   end
 end

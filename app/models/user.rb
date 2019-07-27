@@ -15,4 +15,9 @@ class User < ApplicationRecord
   def address_names
     addresses.pluck(:address_name)
   end
+
+  def find_address_by_name(name)
+    addresses.where(address_name: name)
+  end
+
 end

@@ -352,6 +352,11 @@
         1,
         1,
         null,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/sejinkim/turing/2module/projects/monster_shop_final/app/models/application_record.rb": [
@@ -454,11 +459,12 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null
       ]
     },
-    "timestamp": 1564257523
+    "timestamp": 1564258480
   }
 }
