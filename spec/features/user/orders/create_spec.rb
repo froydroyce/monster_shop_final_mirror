@@ -28,7 +28,7 @@ RSpec.describe 'Create Order' do
       click_button 'Check Out'
 
       expect(current_path).to eq('/profile/orders/new')
-      save_and_open_page
+
       expect(page).to have_content("Please choose a shipping address")
       page.select(@user_work_address.address_name, :from => 'Address name')
 
@@ -55,31 +55,31 @@ RSpec.describe 'Create Order' do
       @hippo = @brian.items.create!(name: 'Hippo', description: "I'm a Hippo!", price: 50, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLM_vbg2Rh-mZ-B4t-RSU9AmSfEEq_SN9xPP_qrA2I6Ftq_D9Qw', active: true, inventory: 3 )
     end
 
-    # it "I see a link to log in or register to check out" do
-    #   visit item_path(@ogre)
-    #   click_button 'Add to Cart'
-    #   visit item_path(@hippo)
-    #   click_button 'Add to Cart'
-    #   visit item_path(@hippo)
-    #   click_button 'Add to Cart'
-    #
-    #   visit '/cart'
-    #
-    #   expect(page).to_not have_button('Check Out')
-    #
-    #   within '#checkout' do
-    #     click_link 'register'
-    #   end
-    #
-    #   expect(current_path).to eq(registration_path)
-    #
-    #   visit '/cart'
-    #
-    #   within '#checkout' do
-    #     click_link 'log in'
-    #   end
-    #
-    #   expect(current_path).to eq(login_path)
-    # end
+    it "I see a link to log in or register to check out" do
+      visit item_path(@ogre)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+
+      visit '/cart'
+
+      expect(page).to_not have_button('Check Out')
+
+      within '#checkout' do
+        click_link 'register'
+      end
+
+      expect(current_path).to eq(registration_path)
+
+      visit '/cart'
+
+      within '#checkout' do
+        click_link 'log in'
+      end
+
+      expect(current_path).to eq(login_path)
+    end
   end
 end

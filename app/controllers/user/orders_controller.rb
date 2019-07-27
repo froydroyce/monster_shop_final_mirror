@@ -15,8 +15,7 @@ class User::OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
-    address = current_user.find_address_by_name(order_params[:address_id])
+    address = current_user.find_address_by_name(order_params[:address_id]).first
     order = current_user.orders.new(address_id: address.id)
     order.save
       cart.items.each do |item|
