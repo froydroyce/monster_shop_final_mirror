@@ -15,6 +15,7 @@ RSpec.describe 'User Registration' do
 
       fill_in 'Name', with: 'Megan'
       fill_in 'Address', with: '123 Main St'
+      fill_in 'Address name', with: 'home'
       fill_in 'City', with: 'Denver'
       fill_in 'State', with: 'CO'
       fill_in 'Zip', with: '80218'
@@ -35,31 +36,29 @@ RSpec.describe 'User Registration' do
         click_button 'Register'
 
         expect(page).to have_button('Register')
-        expect(page).to have_content("address: [\"can't be blank\"]")
-        expect(page).to have_content("city: [\"can't be blank\"]")
-        expect(page).to have_content("state: [\"can't be blank\"]")
-        expect(page).to have_content("zip: [\"can't be blank\"]")
-        expect(page).to have_content("email: [\"can't be blank\"]")
-        expect(page).to have_content("password: [\"can't be blank\"]")
+
+        expect(page).to have_content("Password can't be blank, Addresses is invalid, and Email can't be blank")
+        expect(page).to have_content("Address name can't be blank, Address can't be blank, City can't be blank, State can't be blank, Zip can't be blank, and Zip is not a number")
       end
 
       it 'I use a non-unique email' do
         user = User.create(name: 'Megan', email: 'megan@example.com', password: 'securepassword')
-
+        address = user.addresses.create!(address: "123 Main st", address_name: "home", city: "Denver", state: "CO", zip: "80229")
         visit registration_path
 
         fill_in 'Name', with: user.name
-        fill_in 'Address', with: user.address
-        fill_in 'City', with: user.city
-        fill_in 'State', with: user.state
-        fill_in 'Zip', with: user.zip
+        fill_in 'Address', with: address.address
+        fill_in 'Address name', with: address.address_name
+        fill_in 'City', with: address.city
+        fill_in 'State', with: address.state
+        fill_in 'Zip', with: address.zip
         fill_in 'Email', with: user.email
         fill_in 'Password', with: user.password
         fill_in 'Password confirmation', with: user.password
         click_button 'Register'
 
         expect(page).to have_button('Register')
-        expect(page).to have_content("email: [\"has already been taken\"]")
+        expect(page).to have_content("Email has already been taken")
       end
     end
   end

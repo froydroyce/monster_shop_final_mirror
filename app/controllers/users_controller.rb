@@ -12,12 +12,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    @address = @user.addresses.new(address_params)
+    if @user.save && @address.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome, #{@user.name}!"
       redirect_to profile_path
     else
-      generate_flash(@user)
+      flash[:notice] = @user.errors.full_messages.to_sentence
+      flash[:alert] = @address.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -36,7 +38,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Profile has been updated!'
       redirect_to profile_path
     else
-      generate_flash(@user)
+      flash[:alert] = @user.errors.full_messages.to_sentence
       render :edit
     end
   end
@@ -44,6 +46,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :city, :state, :zip, :email, :password)
+    params.require(:user).permit(:name, :email, :password)
+  end
+
+  def address_params
+    params.permit(:address_name, :address, :city, :state, :zip)
   end
 end
