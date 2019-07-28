@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   patch '/user/:id', to: 'users#update'
   get '/profile', to: 'users#show'
   get '/profile/addresses', to: 'user/addresses#index'
+  post '/profile/addresses', to: 'user/addresses#create'
+  get '/profile/addresses/new', to: 'user/addresses#new'
   get '/profile/addresses/:id/edit', to: 'user/addresses#edit', as: 'profile_address_edit'
   delete '/profile/address/:id', to: 'user/addresses#destroy', as: 'profile_address_delete'
   get '/profile/edit', to: 'users#edit'
