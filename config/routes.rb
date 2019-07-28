@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get :root, to: 'welcome#index'
+  root 'welcome#index'
 
   resources :merchants do
     resources :items, only: [:index]
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/profile/addresses/new', to: 'user/addresses#new'
   get '/profile/addresses/:id/edit', to: 'user/addresses#edit', as: 'profile_address_edit'
   delete '/profile/address/:id', to: 'user/addresses#destroy', as: 'profile_address_delete'
+  patch '/profile/address/:id', to: 'user/addresses#update', as: 'profile_address_update'
   get '/profile/edit', to: 'users#edit'
   get '/profile/edit_password', to: 'users#edit_password'
   post '/orders', to: 'user/orders#create'

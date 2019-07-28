@@ -1,4 +1,6 @@
 class User::AddressesController < User::BaseController
+  before_action :get_address, only: [:edit, :update]
+
   def index
     @user = current_user
   end
@@ -18,9 +20,26 @@ class User::AddressesController < User::BaseController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @address.update(address_params)
+      flash[:notice] = "Address for #{@address.address_name} has been updated."
+      redirect_to profile_addresses_path
+    else
+      flash[:alert] = @address.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   private
 
   def address_params
     params.permit(:address_name, :address, :city, :state, :zip)
+  end
+
+  def get_address
+    @address = Address.find(params[:id])
   end
 end

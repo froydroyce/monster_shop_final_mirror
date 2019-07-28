@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     if review.save
       redirect_to item_path(@item)
     else
-      generate_flash(review)
+      flash[:alert] = review.errors.full_messages.to_sentence
       render :new
     end
   end

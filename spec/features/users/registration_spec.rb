@@ -38,7 +38,6 @@ RSpec.describe 'User Registration' do
         expect(page).to have_button('Register')
 
         expect(page).to have_content("Password can't be blank, Addresses is invalid, and Email can't be blank")
-        expect(page).to have_content("Address name can't be blank, Address can't be blank, City can't be blank, State can't be blank, Zip can't be blank, and Zip is not a number")
       end
 
       it 'I use a non-unique email' do
