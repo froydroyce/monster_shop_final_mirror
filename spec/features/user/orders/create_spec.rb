@@ -10,12 +10,12 @@ RSpec.describe 'Create Order' do
       @giant = @megan.items.create!(name: 'Giant', description: "I'm a Giant!", price: 50, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLM_vbg2Rh-mZ-B4t-RSU9AmSfEEq_SN9xPP_qrA2I6Ftq_D9Qw', active: true, inventory: 3 )
       @hippo = @brian.items.create!(name: 'Hippo', description: "I'm a Hippo!", price: 50, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLM_vbg2Rh-mZ-B4t-RSU9AmSfEEq_SN9xPP_qrA2I6Ftq_D9Qw', active: true, inventory: 3 )
       @user = User.create!(name: 'Megan', email: 'megan@example.com', password: 'securepassword')
-      @user_home_address = @user.addresses.create!(address_name: "Home", address: "1234 Main st", city: "Denver", state: "CO", zip: 80229)
-      @user_work_address = @user.addresses.create!(address_name: "Work", address: "1789 Main st", city: "San Francisco", state: "CA", zip: 90210)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
 
     it 'I can click a link to get to create an order' do
+      @user_home_address = @user.addresses.create!(address_name: "Home", address: "1234 Main st", city: "Denver", state: "CO", zip: 80229)
+      @user_work_address = @user.addresses.create!(address_name: "Work", address: "1789 Main st", city: "San Francisco", state: "CA", zip: 90210)
       visit item_path(@ogre)
       click_button 'Add to Cart'
       visit item_path(@hippo)
@@ -43,6 +43,27 @@ RSpec.describe 'Create Order' do
       within "#order-#{order.id}" do
         expect(page).to have_link(order.id)
       end
+    end
+
+    it "I must have an address to create an order" do
+      visit item_path(@ogre)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+
+      visit '/cart'
+
+      click_button 'Check Out'
+
+      expect(current_path).to eq('/profile/orders/new')
+      save_and_open_page
+      expect(page).to have_content("Please add an address to create an order.")
+
+      click_link 'address'
+
+      expect(current_path).to eq(profile_addresses_new_path)
     end
   end
 

@@ -1,7 +1,12 @@
 <h1>Please choose a shipping address</h1>
-<%= form_for @order do |f| %>
-  <%= f.label :address_id, 'Address name' %>
-  <%= f.select :address_id, options_for_select(@user.address_names) %>
+<br><br>
+<% if @user.addresses.empty? %>
+  <h3>Please add an <%= link_to 'address', profile_addresses_new_path %> to create an order.</h3>
+<% else %>
+  <%= form_for @order do |f| %>
+    <%= f.label :address_id, 'Address name' %>
+    <%= f.select :address_id, options_for_select(@user.address_names) %>
 
-  <%= f.submit 'Submit Order' %>
+    <%= f.submit 'Submit Order' %>
+  <% end %>
 <% end %>
