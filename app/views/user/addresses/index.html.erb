@@ -1,5 +1,7 @@
 <h1>My Addresses</h1>
 
+<%= link_to 'New Address', profile_addresses_new_path %>
+
 <% @user.addresses.each do |address| %>
   <section id="address-<%= address.id %>">
     <h2><%= address.address_name %></h2>

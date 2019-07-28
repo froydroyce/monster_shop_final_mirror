@@ -19,7 +19,7 @@ RSpec.describe 'User Addresses Index' do
       -zip" do
 
         visit profile_addresses_path
-        save_and_open_page
+
         expect(page).to have_content("My Addresses")
 
         within "#address-#{@address_1.id}" do
