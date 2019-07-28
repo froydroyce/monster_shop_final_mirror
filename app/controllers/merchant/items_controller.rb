@@ -12,7 +12,7 @@ class Merchant::ItemsController < Merchant::BaseController
     if item.save
       redirect_to "/merchant/items"
     else
-      generate_flash(item)
+      flash[:alert] = item.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -26,7 +26,7 @@ class Merchant::ItemsController < Merchant::BaseController
     if @item.update(item_params)
       redirect_to "/merchant/items"
     else
-      generate_flash(@item)
+      flash[:alert] = @item.errors.full_messages.to_sentence
       render :edit
     end
   end

@@ -7,7 +7,7 @@
     <h2><%= address.address_name %></h2>
     <p><%= address.address %></p>
     <p><%= address.city %>, <%= address.state %>, <%= address.zip %></p>
-    <%= button_to 'Edit', profile_address_edit_path(address) %>
-    <%= button_to 'Delete', profile_address_delete_path(address) %>
+    <%= button_to 'Edit', profile_address_edit_path(address), method: :get %>
+    <%= button_to 'Delete', profile_address_delete_path(address), method: :delete %>
   </section>
 <% end %>

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Addresses Index' do
   describe 'As a Registered User' do
-    describe 'When I visit my Addresses Index page' do
+    describe 'When I visit my Addresses Edit page' do
       before(:each) do
         @user_1 = User.create!(name: 'Megan', email: 'megan_1@example.com', password: 'securepassword')
         @address_1 = @user_1.addresses.create!(address_name: "Home", address: "1234 Main st", city: "Denver", state: "CO", zip: 80229)
@@ -12,12 +12,14 @@ RSpec.describe 'User Addresses Index' do
         click_button 'Log In'
       end
 
-      it "I can create a new address" do
+      it "I can update my addresses" do
         visit profile_addresses_path
 
-        click_on 'New Address'
+        within "#address-#{@address_1.id}" do
+          click_button 'Edit'
+        end
 
-        expect(current_path).to eq(profile_addresses_new_path)
+        expect(current_path).to eq(profile_address_edit_path(@address_1))
 
         fill_in :address_name, with: 'Work'
         fill_in :address, with: '465 WannaHakkaLougee St'
@@ -25,25 +27,37 @@ RSpec.describe 'User Addresses Index' do
         fill_in :state, with: 'HI'
         fill_in :zip, with: 76876
 
-        click_on 'Create New Address'
+        click_button 'Update Address'
 
         expect(current_path).to eq(profile_addresses_path)
 
-        address = Address.last
+        within "#address-#{@address_1.id}" do
+          address = Address.last
 
-        expect(page).to have_content(address.address_name)
-        expect(page).to have_content(address.address)
-        expect(page).to have_content(address.city)
-        expect(page).to have_content(address.state)
-        expect(page).to have_content(address.zip)
+          expect(page).to have_content(address.address_name)
+          expect(page).to have_content(address.address)
+          expect(page).to have_content(address.city)
+          expect(page).to have_content(address.state)
+          expect(page).to have_content(address.zip)
+        end
       end
 
-      it "I cannot create an address with missing fields" do
+      it "I cannot update an address with missing fields" do
         visit profile_addresses_path
 
-        click_on 'New Address'
+        within "#address-#{@address_1.id}" do
+          click_button 'Edit'
+        end
 
-        click_on 'Create New Address'
+        expect(current_path).to eq(profile_address_edit_path(@address_1))
+
+        fill_in :address_name, with: ""
+        fill_in :address, with: ""
+        fill_in :city, with: ""
+        fill_in :state, with: ""
+        fill_in :zip, with: ""
+
+        click_button 'Update Address'
 
         expect(page).to have_content("Address name can't be blank, Address can't be blank, City can't be blank, State can't be blank, Zip can't be blank, and Zip is not a number")
       end

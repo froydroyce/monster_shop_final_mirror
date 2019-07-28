@@ -37,10 +37,4 @@ class ApplicationController < ActionController::Base
   def exclude_admin
     render file: 'public/404', status: 404 if current_admin?
   end
-
-  def generate_flash(resource)
-    resource.errors.messages.each do |validation, message|
-      flash[validation] = "#{validation}: #{message}"
-    end
-  end
 end

@@ -1,0 +1,18 @@
+<%= form_tag profile_address_update_path(@address), method: :patch do %>
+  <%= label_tag :address_name %><br>
+  <%= text_field_tag :address_name, @address.address_name %>
+<br><br
+  <%= label_tag :address %><br>
+  <%= text_field_tag :address, @address.address %>
+<br><br
+  <%= label_tag :city %><br>
+  <%= text_field_tag :city, @address.city %>
+<br><br
+  <%= label_tag :state %><br>
+  <%= text_field_tag :state, @address.state %>
+<br><br
+  <%= label_tag :zip %><br>
+  <%= text_field_tag :zip, @address.zip %>
+<br><br>
+  <%= submit_tag 'Update Address' %>
+<% end %>
