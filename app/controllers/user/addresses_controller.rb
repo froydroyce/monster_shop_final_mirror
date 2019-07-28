@@ -1,5 +1,5 @@
 class User::AddressesController < User::BaseController
-  before_action :get_address, only: [:edit, :update]
+  before_action :get_address, only: [:edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -31,6 +31,12 @@ class User::AddressesController < User::BaseController
       flash[:alert] = @address.errors.full_messages.to_sentence
       render :edit
     end
+  end
+
+  def destroy
+    @address.destroy
+    flash[:notice] = "Address for #{@address.address_name} has been removed."
+    redirect_to profile_addresses_path
   end
 
   private
