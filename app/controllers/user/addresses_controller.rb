@@ -21,6 +21,12 @@ class User::AddressesController < User::BaseController
   end
 
   def edit
+    if @address.orders.empty?
+      render :edit
+    else
+      flash[:alert] = "Address for #{@address.address_name} is used in an order that is shipped. Cannot be updated"
+      redirect_to profile_addresses_path
+    end
   end
 
   def update
@@ -34,8 +40,12 @@ class User::AddressesController < User::BaseController
   end
 
   def destroy
-    @address.destroy
-    flash[:notice] = "Address for #{@address.address_name} has been removed."
+    if @address.orders.empty?
+      @address.destroy
+      flash[:notice] = "Address for #{@address.address_name} has been removed."
+    else
+      flash[:alert] = "Address for #{@address.address_name} is used in an order that is shipped. Cannot be deleted"
+    end
     redirect_to profile_addresses_path
   end
 
