@@ -1,5 +1,6 @@
 class User::AddressesController < User::BaseController
   before_action :get_address, only: [:edit, :update, :destroy]
+  before_action :exclude_admin
 
   def index
     @user = current_user

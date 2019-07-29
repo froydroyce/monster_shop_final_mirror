@@ -1,0 +1,9 @@
+<h1><%= @user.name %>'s Addresses</h1>
+<br><br>
+<% @user.addresses.each do |address| %>
+  <section id="address-<%= address.id %>">
+    <h2><%= address.address_name %></h2>
+    <p><%= address.address %></p>
+    <p><%= address.city %>, <%= address.state %>, <%= address.zip %></p>
+  </section>
+<% end %>

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-29T13:53:44-06:00">2019-07-29T13:53:44-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-29T15:14:58-06:00">2019-07-29T15:14:58-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.93
+         3.98
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>87</b> files in total.
-    <b>2621</b> relevant lines. 
-    <span class="green"><b>2621</b> lines covered</span> and
+    <b>2635</b> relevant lines. 
+    <span class="green"><b>2635</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -107,7 +107,7 @@
         <td>19</td>
         <td>19</td>
         <td>0</td>
-        <td>202.2</td>
+        <td>210.9</td>
       </tr>
       
       <tr>
@@ -203,9 +203,9 @@
       <tr>
         <td class="strong"><a href="#0038b69b5d8bfbf7390dd66a9ac8a0356f241481" class="src_link" title="app/controllers/user/addresses_controller.rb">app/controllers/user/addresses_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>73</td>
-        <td>43</td>
-        <td>43</td>
+        <td>74</td>
+        <td>44</td>
+        <td>44</td>
         <td>0</td>
         <td>2.3</td>
       </tr>
@@ -287,7 +287,7 @@
         <td>25</td>
         <td>25</td>
         <td>0</td>
-        <td>63.6</td>
+        <td>64.1</td>
       </tr>
       
       <tr>
@@ -473,9 +473,9 @@
       <tr>
         <td class="strong"><a href="#9dcc8b0b8f3f62cd6988847f2df4f859bde84e6b" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>58</td>
-        <td>44</td>
-        <td>44</td>
+        <td>60</td>
+        <td>45</td>
+        <td>45</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -663,9 +663,9 @@
       <tr>
         <td class="strong"><a href="#9b364862309854792393c92e0735a6c1fc82355d" class="src_link" title="spec/features/navigation_restrictions_spec.rb">spec/features/navigation_restrictions_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>214</td>
-        <td>108</td>
-        <td>108</td>
+        <td>238</td>
+        <td>120</td>
+        <td>120</td>
         <td>0</td>
         <td>1.8</td>
       </tr>
@@ -1345,8 +1345,8 @@
           <code class="ruby">  def cart</code>
         </li>
       
-        <li class="covered" data-hits="605" data-linenumber="10">
-          <span class="hits">605</span>
+        <li class="covered" data-hits="609" data-linenumber="10">
+          <span class="hits">609</span>
           
           <code class="ruby">    @cart ||= Cart.new(session[:cart])</code>
         </li>
@@ -1369,8 +1369,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="1862" data-linenumber="14">
-          <span class="hits">1862</span>
+        <li class="covered" data-hits="1944" data-linenumber="14">
+          <span class="hits">1944</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1393,8 +1393,8 @@
           <code class="ruby">  def current_merchant_user?</code>
         </li>
       
-        <li class="covered" data-hits="487" data-linenumber="18">
-          <span class="hits">487</span>
+        <li class="covered" data-hits="489" data-linenumber="18">
+          <span class="hits">489</span>
           
           <code class="ruby">    current_user &amp;&amp; current_user.merchant_id</code>
         </li>
@@ -1417,8 +1417,8 @@
           <code class="ruby">  def current_admin?</code>
         </li>
       
-        <li class="covered" data-hits="578" data-linenumber="22">
-          <span class="hits">578</span>
+        <li class="covered" data-hits="616" data-linenumber="22">
+          <span class="hits">616</span>
           
           <code class="ruby">    current_user &amp;&amp; current_user.admin?</code>
         </li>
@@ -1441,8 +1441,8 @@
           <code class="ruby">  def require_user</code>
         </li>
       
-        <li class="covered" data-hits="81" data-linenumber="26">
-          <span class="hits">81</span>
+        <li class="covered" data-hits="87" data-linenumber="26">
+          <span class="hits">87</span>
           
           <code class="ruby">    render file: &#39;public/404&#39;, status: 404 unless current_user</code>
         </li>
@@ -1513,8 +1513,8 @@
           <code class="ruby">  def exclude_admin</code>
         </li>
       
-        <li class="covered" data-hits="111" data-linenumber="38">
-          <span class="hits">111</span>
+        <li class="covered" data-hits="145" data-linenumber="38">
+          <span class="hits">145</span>
           
           <code class="ruby">    render file: &#39;public/404&#39;, status: 404 if current_admin?</code>
         </li>
@@ -3302,8 +3302,8 @@
     <h3>app/controllers/user/addresses_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>43</b> relevant lines. 
-      <span class="green"><b>43</b> lines covered</span> and
+      <b>44</b> relevant lines. 
+      <span class="green"><b>44</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3323,427 +3323,433 @@
           <code class="ruby">  before_action :get_address, only: [:edit, :update, :destroy]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_action :exclude_admin</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="5">
+        <li class="covered" data-hits="17" data-linenumber="6">
           <span class="hits">17</span>
           
           <code class="ruby">    @user = current_user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="12">
+        <li class="covered" data-hits="4" data-linenumber="13">
           <span class="hits">4</span>
           
           <code class="ruby">    @user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
+        <li class="covered" data-hits="4" data-linenumber="14">
           <span class="hits">4</span>
           
           <code class="ruby">    @address = current_user.addresses.new(address_params)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="14">
+        <li class="covered" data-hits="4" data-linenumber="15">
           <span class="hits">4</span>
           
           <code class="ruby">    if @address.save</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
           <code class="ruby">      flash[:notice] = &quot;New address for #{@address.address_name} has been created.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
+        <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
           <code class="ruby">      if request.referer.include?(&quot;/profile/orders/new&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to &#39;/profile/orders/new&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to profile_addresses_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      flash[:alert] = @address.errors.full_messages.to_sentence</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
+          <code class="ruby">      flash[:alert] = @address.errors.full_messages.to_sentence</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
+          
           <code class="ruby">      if request.referer.include?(&quot;/profile/orders/new&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to &quot;/profile/orders/new?#{address_params.to_param}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">        render :new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
+        <li class="covered" data-hits="3" data-linenumber="33">
           <span class="hits">3</span>
           
           <code class="ruby">    if @address.shipped_orders.empty?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="33">
+        <li class="covered" data-hits="2" data-linenumber="34">
           <span class="hits">2</span>
           
           <code class="ruby">      render :edit</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      flash[:alert] = &quot;Address for #{@address.address_name} is used in an order that is shipped. Cannot be updated&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to profile_addresses_path</code>
+          <code class="ruby">      flash[:alert] = &quot;Address for #{@address.address_name} is used in an order that is shipped. Cannot be updated&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      redirect_to profile_addresses_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="41">
+        <li class="covered" data-hits="2" data-linenumber="42">
           <span class="hits">2</span>
           
           <code class="ruby">    if @address.update(address_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;Address for #{@address.address_name} has been updated.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to profile_addresses_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      flash[:alert] = @address.errors.full_messages.to_sentence</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">      render :edit</code>
+          <code class="ruby">      flash[:alert] = @address.errors.full_messages.to_sentence</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      render :edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="51">
+        <li class="covered" data-hits="4" data-linenumber="52">
           <span class="hits">4</span>
           
           <code class="ruby">    if !@address.shipped_orders.empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:alert] = &quot;Address for #{@address.address_name} is used in an order that is shipped. Cannot be deleted&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="53">
+        <li class="covered" data-hits="3" data-linenumber="54">
           <span class="hits">3</span>
           
           <code class="ruby">    elsif current_user.addresses.count == 1 &amp;&amp; !@address.orders.empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:alert] = &quot;Only one address on file. Please add another address and update your current orders to the new address before deleting&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="55">
+        <li class="covered" data-hits="2" data-linenumber="56">
           <span class="hits">2</span>
           
           <code class="ruby">    elsif !@address.orders.empty?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:alert] = &quot;Please update orders using the address for #{@address.address_name} to a different address before deleting&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">      @address.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
           <code class="ruby">      flash[:notice] = &quot;Address for #{@address.address_name} has been removed.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="61">
+        <li class="covered" data-hits="4" data-linenumber="62">
           <span class="hits">4</span>
           
           <code class="ruby">    redirect_to profile_addresses_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def address_params</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="67">
+        <li class="covered" data-hits="7" data-linenumber="68">
           <span class="hits">7</span>
           
           <code class="ruby">    params.permit(:address_name, :address, :city, :state, :zip)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_address</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="71">
+        <li class="covered" data-hits="9" data-linenumber="72">
           <span class="hits">9</span>
           
           <code class="ruby">    @address = Address.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>
@@ -4801,14 +4807,14 @@
           <code class="ruby">  def initialize(contents)</code>
         </li>
       
-        <li class="covered" data-hits="412" data-linenumber="5">
-          <span class="hits">412</span>
+        <li class="covered" data-hits="416" data-linenumber="5">
+          <span class="hits">416</span>
           
           <code class="ruby">    @contents = contents || {}</code>
         </li>
       
-        <li class="covered" data-hits="412" data-linenumber="6">
-          <span class="hits">412</span>
+        <li class="covered" data-hits="416" data-linenumber="6">
+          <span class="hits">416</span>
           
           <code class="ruby">    @contents.default = 0</code>
         </li>
@@ -4879,8 +4885,8 @@
           <code class="ruby">  def count</code>
         </li>
       
-        <li class="covered" data-hits="364" data-linenumber="18">
-          <span class="hits">364</span>
+        <li class="covered" data-hits="368" data-linenumber="18">
+          <span class="hits">368</span>
           
           <code class="ruby">    @contents.values.sum</code>
         </li>
@@ -7277,8 +7283,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>44</b> relevant lines. 
-      <span class="green"><b>44</b> lines covered</span> and
+      <b>45</b> relevant lines. 
+      <span class="green"><b>45</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7613,22 +7619,34 @@
         <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
-          <code class="ruby">    resources :users, only: [:index, :show]</code>
+          <code class="ruby">    resources :users, only: [:index, :show] do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">    patch &#39;/orders/:id/ship&#39;, to: &#39;orders#ship&#39;</code>
+          <code class="ruby">      resources :addresses, only: :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    patch &#39;/orders/:id/ship&#39;, to: &#39;orders#ship&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">end</code>
@@ -14826,8 +14844,8 @@
     <h3>spec/features/navigation_restrictions_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>108</b> relevant lines. 
-      <span class="green"><b>108</b> lines covered</span> and
+      <b>120</b> relevant lines. 
+      <span class="green"><b>120</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -14886,13 +14904,13 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit the user addresses index&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant&#39;</code>
+          <code class="ruby">      visit &#39;/profile/addresses&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -14910,13 +14928,13 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
+          <code class="ruby">    it &#39;I can not post to /profile/addresses&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
+          <code class="ruby">      page.driver.submit :post, &#39;/profile/addresses&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -14934,13 +14952,13 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
+          <code class="ruby">    it &#39;I can not patch to /profile/address/3&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;/profile/address/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -14958,13 +14976,13 @@
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
+          <code class="ruby">    it &#39;I can not delete to /profile/address/3&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
+          <code class="ruby">      page.driver.submit :delete, &#39;/profile/address/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -14982,13 +15000,13 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
+          <code class="ruby">      visit &#39;/merchant&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -15006,13 +15024,13 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
+          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
@@ -15030,13 +15048,13 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
+          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -15054,13 +15072,13 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
@@ -15078,13 +15096,13 @@
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
+          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
+          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
@@ -15102,13 +15120,13 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/admin&#39;</code>
+          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -15126,13 +15144,13 @@
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
+          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
+          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
@@ -15150,13 +15168,13 @@
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/admin/users&#39;</code>
+          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
@@ -15174,13 +15192,13 @@
         <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
+          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
+          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
@@ -15198,13 +15216,13 @@
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    after :each do</code>
+          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="62">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
           
-          <code class="ruby">      expect(page.status_code).to eq(404)</code>
+          <code class="ruby">      visit &#39;/admin&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
@@ -15216,133 +15234,133 @@
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;As a Default User&#39; do</code>
+          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    before :each do</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="68">
-          <span class="hits">13</span>
-          
-          <code class="ruby">      @user = User.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="69">
-          <span class="hits">13</span>
-          
-          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/admin/users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="72">
           
-          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant&#39;</code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="76">
           
-          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
+          <code class="ruby">    after :each do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="covered" data-hits="18" data-linenumber="78">
+          <span class="hits">18</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(page.status_code).to eq(404)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="80">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
+          <code class="ruby">  describe &#39;As a Default User&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
+          <code class="ruby">    before :each do</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="84">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      @user = User.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="85">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
@@ -15360,13 +15378,13 @@
         <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
+          <code class="ruby">      visit &#39;/merchant&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
@@ -15384,13 +15402,13 @@
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
+          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
@@ -15408,13 +15426,13 @@
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
+          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
@@ -15429,100 +15447,100 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="102">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="102">
           
-          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="105">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
+          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="106">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="106">
           
-          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
+          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="110">
           
-          <code class="ruby">      visit &#39;/admin&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="covered" data-hits="1" data-linenumber="112">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="113">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
+          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="114">
           
-          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="115">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
@@ -15531,118 +15549,118 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="covered" data-hits="1" data-linenumber="117">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="118">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
+          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="119">
           
-          <code class="ruby">      visit &#39;/admin/users&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="120">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="covered" data-hits="1" data-linenumber="121">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="122">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
+          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="123">
           
-          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="125">
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="126">
           <span class="hits">1</span>
           
-          <code class="ruby">    after :each do</code>
+          <code class="ruby">      visit &#39;/admin&#39;</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="127">
-          <span class="hits">13</span>
-          
-          <code class="ruby">      expect(page.status_code).to eq(404)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="127">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="131">
+        <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;As a Merchant User (Employee)&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="132">
+        <li class="covered" data-hits="1" data-linenumber="130">
           <span class="hits">1</span>
           
-          <code class="ruby">    before :each do</code>
+          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="133">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="131">
           
-          <code class="ruby">      @merchant = Merchant.create!(name: &#39;Megans Marmalades&#39;, address: &#39;123 Main St&#39;, city: &#39;Denver&#39;, state: &#39;CO&#39;, zip: 80218)</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="134">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="132">
           
-          <code class="ruby">      @m_user = @merchant.users.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;)</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="135">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="133">
           
-          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@m_user)</code>
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="135">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/admin/users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="136">
@@ -15660,13 +15678,13 @@
         <li class="covered" data-hits="1" data-linenumber="138">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="139">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/admin&#39;</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="140">
@@ -15684,13 +15702,13 @@
         <li class="covered" data-hits="1" data-linenumber="142">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
+          <code class="ruby">    after :each do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="13" data-linenumber="143">
+          <span class="hits">13</span>
           
-          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
+          <code class="ruby">      expect(page.status_code).to eq(404)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="144">
@@ -15702,7 +15720,7 @@
         <li class="never" data-hits="" data-linenumber="145">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="146">
@@ -15714,199 +15732,199 @@
         <li class="covered" data-hits="1" data-linenumber="147">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
+          <code class="ruby">  describe &#39;As a Merchant User (Employee)&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="148">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/admin/users&#39;</code>
+          <code class="ruby">    before :each do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="149">
+        <li class="covered" data-hits="4" data-linenumber="149">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      @merchant = Merchant.create!(name: &#39;Megans Marmalades&#39;, address: &#39;123 Main St&#39;, city: &#39;Denver&#39;, state: &#39;CO&#39;, zip: 80218)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="150">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      @m_user = @merchant.users.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="151">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@m_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="152">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="150">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="152">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="153">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="covered" data-hits="1" data-linenumber="154">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;I can not visit the admin dashboard&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="155">
           <span class="hits">1</span>
           
-          <code class="ruby">    after :each do</code>
+          <code class="ruby">      visit &#39;/admin&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="156">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="156">
           
-          <code class="ruby">      expect(page.status_code).to eq(404)</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="157">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not visit the admin merchant show page&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/admin/merchants/3&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="160">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="161">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="163">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;As an Admin&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit the admin users page&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
+        <li class="covered" data-hits="1" data-linenumber="164">
           <span class="hits">1</span>
           
-          <code class="ruby">    before :each do</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="162">
-          <span class="hits">11</span>
-          
-          <code class="ruby">      @admin = User.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;, role: :admin)</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="163">
-          <span class="hits">11</span>
-          
-          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="164">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      visit &#39;/admin/users&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="165">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="166">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="166">
           
-          <code class="ruby">    it &#39;I can not visit the user profile&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="167">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/profile&#39;</code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/:id&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="168">
+        <li class="covered" data-hits="1" data-linenumber="168">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;admin/merchants/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="169">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="170">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="170">
           
-          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="171">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant&#39;</code>
+          <code class="ruby">    after :each do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="172">
+        <li class="covered" data-hits="4" data-linenumber="172">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(page.status_code).to eq(404)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="173">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="174">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="175">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="176">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="177">
+        <li class="never" data-hits="" data-linenumber="174">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="175">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="178">
+        <li class="covered" data-hits="1" data-linenumber="176">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
+          <code class="ruby">  describe &#39;As an Admin&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="179">
+        <li class="covered" data-hits="1" data-linenumber="177">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
+          <code class="ruby">    before :each do</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="178">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      @admin = User.create(name: &#39;Megan&#39;, email: &#39;megan@example.com&#39;, password: &#39;securepassword&#39;, role: :admin)</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="179">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="180">
@@ -15924,13 +15942,13 @@
         <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit the user profile&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="183">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
+          <code class="ruby">      visit &#39;/profile&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="184">
@@ -15948,13 +15966,13 @@
         <li class="covered" data-hits="1" data-linenumber="186">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
+          <code class="ruby">    it &#39;I can not visit the user addresses index&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="187">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
+          <code class="ruby">      visit &#39;/profile/addresses&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="188">
@@ -15972,13 +15990,13 @@
         <li class="covered" data-hits="1" data-linenumber="190">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
+          <code class="ruby">    it &#39;I can not post to /profile/addresses&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="191">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
+          <code class="ruby">      page.driver.submit :post, &#39;/profile/addresses&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="192">
@@ -15996,13 +16014,13 @@
         <li class="covered" data-hits="1" data-linenumber="194">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant dashboard&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="195">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
+          <code class="ruby">      visit &#39;/merchant&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="196">
@@ -16020,13 +16038,13 @@
         <li class="covered" data-hits="1" data-linenumber="198">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant order show&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="199">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
+          <code class="ruby">      visit &#39;/merchant/orders/3&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="200">
@@ -16044,13 +16062,13 @@
         <li class="covered" data-hits="1" data-linenumber="202">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
+          <code class="ruby">    it &#39;I cannot visit the merchant items index&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="203">
           <span class="hits">1</span>
           
-          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
+          <code class="ruby">      visit &#39;/merchant/items&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="204">
@@ -16068,13 +16086,13 @@
         <li class="covered" data-hits="1" data-linenumber="206">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;I cannot visit a cart&#39; do</code>
+          <code class="ruby">    it &#39;I can not patch to /merchant/items/:id&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="207">
           <span class="hits">1</span>
           
-          <code class="ruby">      visit &#39;/cart&#39;</code>
+          <code class="ruby">      page.driver.submit :patch, &#39;/merchant/items/3&#39;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="208">
@@ -16092,13 +16110,13 @@
         <li class="covered" data-hits="1" data-linenumber="210">
           <span class="hits">1</span>
           
-          <code class="ruby">    after :each do</code>
+          <code class="ruby">    it &#39;I can not delete to /merchant/items/:id&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="211">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="1" data-linenumber="211">
+          <span class="hits">1</span>
           
-          <code class="ruby">      expect(page.status_code).to eq(404)</code>
+          <code class="ruby">      page.driver.submit :delete, &quot;/merchant/items/3&quot;, {}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="212">
@@ -16110,10 +16128,154 @@
         <li class="never" data-hits="" data-linenumber="213">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="214">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not visit new merchant item&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="215">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/merchant/items/new&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="216">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="217">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="218">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not post to /merchant/items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="219">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      page.driver.submit :post, &#39;/merchant/items&#39;, {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="220">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="221">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="222">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not visit edit merchant item&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="223">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/merchant/items/3/edit&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="225">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="226">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I can not put to /merchant/items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="227">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      page.driver.submit :put, &#39;/merchant/items/3&#39;, {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="228">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="229">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="230">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;I cannot visit a cart&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="231">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit &#39;/cart&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="232">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="233">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="234">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    after :each do</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="235">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      expect(page.status_code).to eq(404)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="236">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="237">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="214">
+        <li class="never" data-hits="" data-linenumber="238">
           
           
           <code class="ruby">end</code>
