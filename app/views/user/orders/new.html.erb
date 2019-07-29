@@ -1,8 +1,27 @@
+<% if @user.addresses.empty? %>
+  <h3>Please add an address to create an order.</h3>
+  <br><br>
+  <%= form_tag profile_addresses_path do %>
+    <%= label_tag :address_name %><br>
+    <%= text_field_tag :address_name, params[:address_name] %>
+    <br><br>
+    <%= label_tag :address %><br>
+    <%= text_field_tag :address, params[:address] %>
+    <br><br>
+    <%= label_tag :city %><br>
+    <%= text_field_tag :city, params[:city] %>
+    <br><br>
+    <%= label_tag :state %><br>
+    <%= text_field_tag :state, params[:state] %>
+    <br><br>
+    <%= label_tag :zip %><br>
+    <%= text_field_tag :zip, params[:zip] %>
+    <br><br>
+    <%= submit_tag 'Create New Address' %>
+  <% end %>
+<% else %>
 <h1>Please choose a shipping address</h1>
 <br><br>
-<% if @user.addresses.empty? %>
-  <h3>Please add an <%= link_to 'address', profile_addresses_new_path %> to create an order.</h3>
-<% else %>
   <%= form_for @order do |f| %>
     <%= f.label :address_id, 'Address name' %>
     <%= f.select :address_id, options_for_select(@user.address_names) %>

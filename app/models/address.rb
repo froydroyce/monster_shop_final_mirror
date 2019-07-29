@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
   belongs_to :user
-  has_many :orders, through: :user
+  has_many :orders
 
   validates_presence_of :address_name
   validates :address_name, uniqueness: {:scope => :user_id}

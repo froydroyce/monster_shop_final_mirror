@@ -52,7 +52,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'dashboard#index', as: :dashboard
     resources :merchants, only: [:show, :update]
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show] do
+      resources :addresses, only: :index
+    end
     patch '/orders/:id/ship', to: 'orders#ship'
   end
 end

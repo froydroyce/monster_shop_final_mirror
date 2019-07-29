@@ -6,8 +6,6 @@ RSpec.describe 'User Addresses Index' do
       before(:each) do
         @user_1 = User.create!(name: 'Megan', email: 'megan_1@example.com', password: 'securepassword')
         @address_1 = @user_1.addresses.create!(address_name: "House", address: "1234 Main st", city: "Aurora", state: "FL", zip: 80229)
-        @address_2 = @user_1.addresses.create!(address_name: "Work", address: "456 Not-Main st", city: "Denver", state: "CO", zip: 80236)
-        @address_3 = @user_1.addresses.create!(address_name: "Office", address: "2342 Officey", city: "Englewood", state: "CO", zip: 80003)
         visit login_path
         fill_in :email, with: @user_1.email
         fill_in :password, with: @user_1.password
@@ -39,6 +37,47 @@ RSpec.describe 'User Addresses Index' do
         end
 
         expect(page).to have_content("Address for #{@address_1.address_name} is used in an order that is shipped. Cannot be deleted")
+
+        within "#address-#{@address_1.id}" do
+          expect(page).to have_content(@address_1.address_name)
+          expect(page).to have_content(@address_1.address)
+          expect(page).to have_content(@address_1.city)
+          expect(page).to have_content(@address_1.state)
+          expect(page).to have_content(@address_1.zip)
+        end
+      end
+
+      it "I cannot delete an address if I have an order and only one address" do
+        @order_2 = @user_1.orders.create!(address_id: @address_1.id)
+
+        visit profile_addresses_path
+
+        within "#address-#{@address_1.id}" do
+          click_button 'Delete'
+        end
+
+        expect(page).to have_content("Only one address on file. Please add another address and update your current orders to the new address before deleting")
+
+        within "#address-#{@address_1.id}" do
+          expect(page).to have_content(@address_1.address_name)
+          expect(page).to have_content(@address_1.address)
+          expect(page).to have_content(@address_1.city)
+          expect(page).to have_content(@address_1.state)
+          expect(page).to have_content(@address_1.zip)
+        end
+      end
+
+      it "I must update an address on a order to a new address before deleting" do
+        @address_2 = @user_1.addresses.create!(address_name: "Work", address: "456 Not-Main st", city: "Denver", state: "CO", zip: 80236)
+        @order_2 = @user_1.orders.create!(address_id: @address_1.id)
+
+        visit profile_addresses_path
+
+        within "#address-#{@address_1.id}" do
+          click_button 'Delete'
+        end
+
+        expect(page).to have_content("Please update orders using the address for #{@address_1.address_name} to a different address before deleting")
 
         within "#address-#{@address_1.id}" do
           expect(page).to have_content(@address_1.address_name)

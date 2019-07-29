@@ -6,6 +6,22 @@ RSpec.describe 'Navigation Restrictions' do
       visit '/profile'
     end
 
+    it 'I can not visit the user addresses index' do
+      visit '/profile/addresses'
+    end
+
+    it 'I can not post to /profile/addresses' do
+      page.driver.submit :post, '/profile/addresses', {}
+    end
+
+    it 'I can not patch to /profile/address/3' do
+      page.driver.submit :patch, '/profile/address/3', {}
+    end
+
+    it 'I can not delete to /profile/address/3' do
+      page.driver.submit :delete, '/profile/address/3', {}
+    end
+
     it 'I cannot visit the merchant dashboard' do
       visit '/merchant'
     end
@@ -165,6 +181,14 @@ RSpec.describe 'Navigation Restrictions' do
 
     it 'I can not visit the user profile' do
       visit '/profile'
+    end
+
+    it 'I can not visit the user addresses index' do
+      visit '/profile/addresses'
+    end
+
+    it 'I can not post to /profile/addresses' do
+      page.driver.submit :post, '/profile/addresses', {}
     end
 
     it 'I cannot visit the merchant dashboard' do
