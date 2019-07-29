@@ -58,7 +58,7 @@ RSpec.describe 'Create Order' do
       click_button 'Check Out'
 
       expect(current_path).to eq('/profile/orders/new')
-      save_and_open_page
+
       expect(page).to have_content("Please add an address to create an order.")
 
       click_link 'address'

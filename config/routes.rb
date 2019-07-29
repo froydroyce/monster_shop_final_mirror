@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/profile/orders', to: 'user/orders#index'
   get '/profile/orders/new', to: 'user/orders#new'
   get '/profile/orders/:id', to: 'user/orders#show'
+  patch '/profile/orders/:id', to: 'user/orders#update'
   delete '/profile/orders/:id', to: 'user/orders#cancel'
 
   get '/login', to: 'sessions#new'
