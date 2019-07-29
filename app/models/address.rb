@@ -10,4 +10,8 @@ class Address < ApplicationRecord
   validates_presence_of :zip
 
   validates :zip, numericality: true
+
+  def shipped_orders
+    orders.where(status: "shipped", address_id: id)
+  end
 end

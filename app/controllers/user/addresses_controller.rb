@@ -6,7 +6,12 @@ class User::AddressesController < User::BaseController
   end
 
   def new
-    @address = current_user.addresses.new
+    @referer = []
+    @referer << request.referer
+  end
+
+  def last_referer
+
   end
 
   def create
@@ -21,7 +26,7 @@ class User::AddressesController < User::BaseController
   end
 
   def edit
-    if @address.orders.empty?
+    if @address.shipped_orders.empty?
       render :edit
     else
       flash[:alert] = "Address for #{@address.address_name} is used in an order that is shipped. Cannot be updated"
