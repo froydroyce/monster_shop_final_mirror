@@ -61,9 +61,40 @@ RSpec.describe 'Create Order' do
 
       expect(page).to have_content("Please add an address to create an order.")
 
-      click_link 'address'
+      fill_in :address_name, with: 'Da House'
+      fill_in :address, with: '9090 Quitman Way'
+      fill_in :city, with: 'Westminster'
+      fill_in :state, with: 'CO'
+      fill_in :zip, with: '80012'
 
-      expect(current_path).to eq(profile_addresses_new_path)
+      click_on 'Create New Address'
+
+      expect(current_path).to eq('/profile/orders/new')
+    end
+
+    it "I must fill in all fields" do
+      visit item_path(@ogre)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+      visit item_path(@hippo)
+      click_button 'Add to Cart'
+
+      visit '/cart'
+
+      click_button 'Check Out'
+      
+      fill_in :address_name, with: ''
+      fill_in :address, with: ''
+      fill_in :city, with: ''
+      fill_in :state, with: ''
+      fill_in :zip, with: ''
+
+      click_on 'Create New Address'
+
+      expect(current_path).to eq('/profile/orders/new')
+
+      expect(page).to have_content("Address name can't be blank, Address can't be blank, City can't be blank, State can't be blank, Zip can't be blank, and Zip is not a number")
     end
   end
 

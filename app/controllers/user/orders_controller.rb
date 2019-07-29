@@ -8,7 +8,7 @@ class User::OrdersController < User::BaseController
   def show
     @order = current_user.orders.find(params[:id])
     @user = current_user
-    @address = @order.address
+    @address = Address.find(@order.address_id)
   end
 
   def new
@@ -33,8 +33,8 @@ class User::OrdersController < User::BaseController
   end
 
   def update
-    address = current_user.find_address_by_name(address_params[:address_id]).first
     order = Order.find(params[:id])
+    address = current_user.find_address_by_name(address_params[:address_id]).first
     if order.pending?
       order.update(address_id: address.id)
       flash[:notice] = "Shipping address updated."
