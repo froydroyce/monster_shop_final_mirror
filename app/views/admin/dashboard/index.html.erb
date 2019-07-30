@@ -1,8 +1,11 @@
-<% @orders.each do |order| %>
-  <section class='order' id='order-<%= order.id %>'>
-    <h3><%= link_to order.user.name, "/admin/users/#{order.user.id}" %></h3>
-    <p><%= order.id %>: <%= order.status %></p>
-    <p>Created: <%= order.created_at %></p>
-    <%= link_to 'Ship', "/admin/orders/#{order.id}/ship", method: :patch if order.packaged? %>
-  </section>
-<% end %>
+<h3><u>Orders</u></h3>
+<div id="align_right">
+  <% @orders.each do |order| %>
+    <section class='order' id='order-<%= order.id %>'>
+      <h3><%= link_to order.user.name, "/admin/users/#{order.user.id}" %></h3>
+      <p><%= order.id %>: <%= order.status %></p>
+      <p>Created: <%= order.created_at %></p>
+      <%= link_to 'Ship', "/admin/orders/#{order.id}/ship", method: :patch if order.packaged? %>
+    </section>
+  <% end %>
+</div>

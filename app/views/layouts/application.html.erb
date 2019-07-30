@@ -6,29 +6,54 @@
     <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <style>
+      #main {
+        width:800px;
+        display:table-cell;
+        padding-top: 35px;
+        padding-left:50px;
+      }
+
+      #form_field {
+        width:300px;
+      }
+
+      #align_right {
+        padding-left:50px;
+      }
+
+    </style>
   </head>
 
-  <body>
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Register', registration_path unless current_user %>
-      <%= link_to 'Log In', login_path unless current_user %>
-      <% if current_user %>
-        <%= link_to 'Log Out', logout_path %>
-        <%= link_to 'Profile', profile_path %>
-        <% if current_merchant_user? %>
-          <%= link_to 'Merchant Dashboard', merchant_dashboard_path %>
-        <% elsif current_admin? %>
-          <%= link_to 'Admin Dashboard', admin_dashboard_path %>
-          <%= link_to 'Users', '/admin/users' %>
-        <% end %>
-      <% end %>
-      <%= link_to 'Merchants', '/merchants' %>
-      <%= link_to 'Items', '/items' %>
-      <%= link_to "Cart: #{cart.count}", cart_path unless current_user && current_admin?%>
-      <% if current_user %>
-        <p>Logged in as <%= current_user.name %></p>
-      <% end %>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href<%= link_to 'Monster | Shop', root_path %></a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <a class="nav-item nav-link"<%= link_to 'Home', root_path %></a>
+          <a class="nav-item nav-link"<%= link_to 'Merchants', '/merchants' %></a>
+          <a class="nav-item nav-link"<%= link_to 'Items', '/items' %></a>
+          <% if current_user %>
+            <a class="nav-item nav-link"<%= link_to 'Profile', profile_path  %></a>
+            <a class="nav-item nav-link"<%= link_to 'Log Out', logout_path %></a>
+            <% if current_merchant_user? %>
+              <a class="nav-item nav-link"<%= link_to 'Merchant Dashboard', merchant_dashboard_path %></a>
+            <% elsif current_admin? %>
+              <a class="nav-item nav-link"<%= link_to 'Admin Dashboard', admin_dashboard_path %></a>
+              <a class="nav-item nav-link"<%= link_to 'Users', '/admin/users' %></a>
+            <% end %>
+          <% end %>
+          <a class="nav-item nav-link"<%= link_to "Cart: #{cart.count}", cart_path unless current_user && current_admin? %></a>
+          <a class="nav-item nav-link"<%= link_to 'Register', registration_path unless current_user %></a>
+          <a class="nav-item nav-link"<%= link_to 'Log In', login_path unless current_user %></a>
+        </ul>
+
+        <span class="navbar-text">
+          <% if current_user %>
+            Logged in as <%= current_user.name %>
+          <% end %>
+        </span
+      </div>
     </nav>
 
     <% if flash[:notice] %>
@@ -46,5 +71,6 @@
     <% end %>
 
     <%= yield %>
+  <body>
   </body>
 </html>

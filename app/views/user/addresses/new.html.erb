@@ -1,18 +1,24 @@
-<%= form_tag profile_addresses_path do %>
-  <%= label_tag :address_name %><br>
-  <%= text_field_tag :address_name, params[:address_name] %>
-  <br><br>
-  <%= label_tag :address %><br>
-  <%= text_field_tag :address, params[:address] %>
-  <br><br>
-  <%= label_tag :city %><br>
-  <%= text_field_tag :city, params[:city] %>
-  <br><br>
-  <%= label_tag :state %><br>
-  <%= text_field_tag :state, params[:state] %>
-  <br><br>
-  <%= label_tag :zip %><br>
-  <%= text_field_tag :zip, params[:zip] %>
-  <br><br>
-  <%= submit_tag 'Create New Address' %>
-<% end %>
+<div id="main">
+  <div class="form-group">
+    <div id="form_field">
+      <%= form_tag profile_addresses_path do %>
+        <label><%= label_tag :address_name %></label>
+        <input class="form-control"<%= text_field_tag :address_name, params[:address_name] %>
+        <br>
+        <label><%= label_tag :address %></label>
+        <input class="form-control"<%= text_field_tag :address, params[:address] %>
+        <br>
+        <label><%= label_tag :city %></label>
+        <input class="form-control"<%= text_field_tag :city, params[:city] %>
+        <br>
+        <label><%= label_tag :state %></label>
+        <input class="form-control"<%= text_field_tag :state, params[:state] %>
+        <br>
+        <label><%= label_tag :zip %></label>
+        <input class="form-control"<%= text_field_tag :zip, params[:zip] %>
+        <br>
+        <input class="form-control"<%= submit_tag 'Create New Address' %>
+      <% end %>
+    </div>
+  </div>
+</div>
