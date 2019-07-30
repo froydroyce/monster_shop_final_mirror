@@ -10,6 +10,12 @@
       <h3><%= coupon.name %></h3>
       <p><%= number_to_currency(coupon.amount) %> off</p>
       <p>Status: <%= coupon.status %></p>
+      <%= button_to 'Edit', edit_merchant_coupon_path(coupon), method: :get %>
+      <% if coupon.enabled? %>
+        <%= button_to "Disable", merchant_disable_coupon_path(coupon), method: :patch %>
+      <% else %>
+        <%= button_to "Enable", merchant_enable_coupon_path(coupon), method: :patch %>
+      <% end %>
     </div>
   </section>
 <% end %>
