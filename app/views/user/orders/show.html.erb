@@ -1,31 +1,35 @@
-<h2>Order <%= @order.id %></h2>
+<div id="main">
+  <h2>Order <%= @order.id %></h2>
+  <div id="form_field">
+    <%= form_tag "/profile/orders/#{@order.id}", method: :patch do %>
+      <label><%= label_tag :address_id, 'Shipping Address' %></label>
+      <select class="form-control"<%= select_tag :address_id, options_for_select(@user.address_names) %>
 
-<%= form_tag "/profile/orders/#{@order.id}", method: :patch do %>
-  <%= label_tag :address_id, 'Shipping Address' %>
-  <%= select_tag :address_id, options_for_select(@user.address_names) %>
-
-  <%= submit_tag 'Change Address' %>
-<% end %>
-
-<p><b><u><%= @address.address_name %></u></b></p>
-<p><%= @user.name %></p>
-<p><%= @address.address %></p>
-<p><%= @address.city %>, <%= @address.state %>, <%= @address.zip %></p>
-<br><br>
-<p>Created On: <%= @order.created_at.strftime("%m/%d/%Y") %></p>
-<p>Updated On: <%= @order.updated_at.strftime("%m/%d/%Y") %></p>
-<p>Status: <%= @order.status %></p>
-<p><%= @order.count_of_items %> items</p>
-<p>Total: <%= number_to_currency(@order.grand_total) %></p>
-<%= button_to 'Cancel Order', "/profile/orders/#{@order.id}", method: :delete if @order.pending? %>
-
-<h2>Order Items</h2>
-<% @order.order_items.each do |order_item| %>
-  <section id='order-item-<%= order_item.id %>'>
-    <h3><%= link_to order_item.item.name, item_path(order_item.item) %></h3>
-    <p><%= order_item.item.description %></p>
-    <p>Quantity: <%= order_item.quantity %></p>
-    <p>Price: <%= number_to_currency(order_item.price) %></p>
-    <p>Subtotal: <%= number_to_currency(order_item.subtotal) %></p>
-  </section>
-<% end %>
+      <input class="form-control"<%= submit_tag 'Change Address' %>
+    <% end %>
+    <br>
+    <h3><u><%= @address.address_name %></u></h3>
+    <p><%= @user.name %></p>
+    <p><%= @address.address %></p>
+    <p><%= @address.city %>, <%= @address.state %>, <%= @address.zip %></p>
+    <p>Created On: <%= @order.created_at.strftime("%m/%d/%Y") %></p>
+    <p>Updated On: <%= @order.updated_at.strftime("%m/%d/%Y") %></p>
+    <p>Status: <%= @order.status %></p>
+    <p><%= @order.count_of_items %> items</p>
+    <p>Total: <%= number_to_currency(@order.grand_total) %></p>
+    <%= button_to 'Cancel Order', "/profile/orders/#{@order.id}", method: :delete if @order.pending? %>
+    <br><br>
+  </div>
+  <h3><u>Order Items</u></h3>
+  <div id="align_right">
+  <% @order.order_items.each do |order_item| %>
+    <section id='order-item-<%= order_item.id %>'>
+      <h3><%= link_to order_item.item.name, item_path(order_item.item) %></h3>
+      <p><%= order_item.item.description %></p>
+      <p>Quantity: <%= order_item.quantity %></p>
+      <p>Price: <%= number_to_currency(order_item.price) %></p>
+      <p>Subtotal: <%= number_to_currency(order_item.subtotal) %></p>
+    </section>
+  <% end %>
+  </div>
+</div>

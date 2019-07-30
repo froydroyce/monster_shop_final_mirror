@@ -1,13 +1,15 @@
 <h1>My Addresses</h1>
 
-<%= link_to 'New Address', profile_addresses_new_path %>
-
-<% @user.addresses.each do |address| %>
-  <section id="address-<%= address.id %>">
-    <h2><%= address.address_name %></h2>
-    <p><%= address.address %></p>
-    <p><%= address.city %>, <%= address.state %>, <%= address.zip %></p>
-    <%= button_to 'Edit', profile_address_edit_path(address), method: :get %>
-    <%= button_to 'Delete', profile_address_delete_path(address), method: :delete %>
-  </section>
-<% end %>
+<div id="align_right">
+  <%= link_to 'New Address', profile_addresses_new_path %>
+  <br>
+  <% @user.addresses.each do |address| %>
+    <section id="address-<%= address.id %>">
+      <h2><%= address.address_name %></h2>
+      <p><%= address.address %></p>
+      <p><%= address.city %>, <%= address.state %>, <%= address.zip %></p>
+      <%= button_to 'Edit', profile_address_edit_path(address), method: :get %>
+      <%= button_to 'Delete', profile_address_delete_path(address), method: :delete %>
+    </section>
+  <% end %>
+</div>
