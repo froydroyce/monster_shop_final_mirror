@@ -28,6 +28,8 @@ RSpec.describe 'As a merchant' do
 
         expect(current_path).to eq(merchant_coupons_path)
 
+        expect(page).to have_content("Coupon has been updated.")
+
         within "#coupon-#{@marma_10.id}" do
           expect(page).to have_content("marma40")
           expect(page).to have_content("$40.00 off")
@@ -56,6 +58,8 @@ RSpec.describe 'As a merchant' do
 
         expect(current_path).to eq(merchant_coupons_path)
 
+        expect(page).to have_content("#{@marma_10.name} has been disabled.")
+
         within "#coupon-#{@marma_10.id}" do
           expect(page).to have_content("Status: disabled")
         end
@@ -65,6 +69,8 @@ RSpec.describe 'As a merchant' do
         end
 
         expect(current_path).to eq(merchant_coupons_path)
+
+        expect(page).to have_content("#{@marma_10.name} has been enabled.")
 
         within "#coupon-#{@marma_10.id}" do
           expect(page).to have_content("Status: enabled")

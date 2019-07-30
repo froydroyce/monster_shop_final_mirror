@@ -11,6 +11,7 @@
       <p><%= number_to_currency(coupon.amount) %> off</p>
       <p>Status: <%= coupon.status %></p>
       <%= button_to 'Edit', edit_merchant_coupon_path(coupon), method: :get %>
+      <%= button_to 'Delete', merchant_coupon_path(coupon), method: :delete %>
       <% if coupon.enabled? %>
         <%= button_to "Disable", merchant_disable_coupon_path(coupon), method: :patch %>
       <% else %>

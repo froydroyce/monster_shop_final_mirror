@@ -45,7 +45,7 @@ Rails.application.routes.draw do
     get '/', to: 'dashboard#index', as: :dashboard
     resources :orders, only: :show
     resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :coupons, only: [:index, :new, :create, :edit, :update]
+    resources :coupons, only: [:index, :new, :create, :edit, :update, :destroy]
     patch 'coupon/:id/enable', to: 'coupons#enable', as: 'enable_coupon'
     patch 'coupon/:id/disable', to: 'coupons#disable', as: 'disable_coupon'
     put '/items/:id/change_status', to: 'items#change_status'

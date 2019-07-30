@@ -1,6 +1,6 @@
 class Merchant::CouponsController < Merchant::BaseController
   before_action :get_merchant, only: [:index, :create]
-  before_action :get_coupon, only: [:edit, :update, :disable, :enable]
+  before_action :get_coupon, only: [:edit, :update, :disable, :enable, :destroy]
 
   def index
     @coupons = @merchant.coupons
@@ -29,6 +29,7 @@ class Merchant::CouponsController < Merchant::BaseController
 
   def update
     if @coupon.update(coupon_params)
+      flash[:notice] = "Coupon has been updated."
       redirect_to merchant_coupons_path
     else
       flash[:alert] = @coupon.errors.full_messages.to_sentence
@@ -36,13 +37,21 @@ class Merchant::CouponsController < Merchant::BaseController
     end
   end
 
+  def destroy
+    @coupon.destroy
+    flash[:alert] = "#{@coupon.name} has been deleted."
+    redirect_to merchant_coupons_path
+  end
+
   def disable
     @coupon.update(status: 1)
+    flash[:alert] = "#{@coupon.name} has been disabled."
     redirect_to merchant_coupons_path
   end
 
   def enable
     @coupon.update(status: 0)
+    flash[:alert] = "#{@coupon.name} has been enabled."
     redirect_to merchant_coupons_path
   end
 
