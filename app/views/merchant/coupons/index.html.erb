@@ -1,9 +1,15 @@
 <h1>My Coupons</h1>
 <br>
+<div id="align_right">
+  <%= link_to "New Coupon", new_merchant_coupon_path %>
+</div>
+<br>
 <% @coupons.each do |coupon| %>
   <section id="coupon-<%= coupon.id %>">
-    <h3><%= coupon.name %></h3>
-    <p><%= number_to_currency(coupon.amount) %> off</p>
-    <p>Status: <%= coupon.status %></p>
+    <div id="align_right">
+      <h3><%= coupon.name %></h3>
+      <p><%= number_to_currency(coupon.amount) %> off</p>
+      <p>Status: <%= coupon.status %></p>
+    </div>
   </section>
 <% end %>

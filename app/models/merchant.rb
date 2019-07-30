@@ -33,4 +33,8 @@ class Merchant < ApplicationRecord
   def order_items_by_order(order_id)
     order_items.where(order_id: order_id)
   end
+
+  def coupon_limit?
+    coupons.count >= 5
+  end
 end

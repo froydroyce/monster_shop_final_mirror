@@ -17,6 +17,7 @@ RSpec.describe 'As a merchant' do
 
     it "I see all of my coupons" do
       visit merchant_dashboard_path
+      
       click_link 'My Coupons'
 
       expect(current_path).to eq(merchant_coupons_path)
