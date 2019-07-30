@@ -35,6 +35,10 @@ RSpec.describe Merchant do
       @order_item_2 = @order_1.order_items.create!(item: @hippo, price: @hippo.price, quantity: 3)
       @order_item_3 = @order_2.order_items.create!(item: @giant, price: @hippo.price, quantity: 2)
       @order_item_4 = @order_2.order_items.create!(item: @ogre, price: @hippo.price, quantity: 2)
+      @marma_10 = @megan.coupons.create!(name: "marma10", amount: 10)
+      @marma_20 = @megan.coupons.create!(name: "marma20", amount: 20)
+      @marma_30 = @megan.coupons.create!(name: "marma30", amount: 30)
+      @marma_40 = @megan.coupons.create!(name: "marma40", amount: 40)
     end
 
     it '.item_count' do
@@ -58,6 +62,12 @@ RSpec.describe Merchant do
 
     it '.order_items_by_order' do
       expect(@megan.order_items_by_order(@order_1.id)).to eq([@order_item_1])
+    end
+
+    it ".coupon_limit?" do
+      expect(@megan.coupon_limit?).to eq(false)
+      @marma_50 = @megan.coupons.create!(name: "marma50", amount: 50)
+      expect(@megan.coupon_limit?).to eq(true)
     end
   end
 end

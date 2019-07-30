@@ -1,0 +1,13 @@
+<h1>New Coupon</h1>
+<br><br>
+<div id="form_field">
+  <%= form_tag merchant_coupons_path do %>
+    <label><%= label_tag :name %></label><br>
+    <input class="form-control"<%= text_field_tag :name %><br>
+
+    <label><%= label_tag :amount %></label><br>
+    <input class="form-control"<%= text_field_tag :amount %><br>
+
+    <input class="form-control"<%= submit_tag 'Create New Coupon' %>
+  <% end %>
+</div>
