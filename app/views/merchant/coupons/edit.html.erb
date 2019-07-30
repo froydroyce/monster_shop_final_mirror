@@ -1,0 +1,13 @@
+<h1>Edit Coupon</h1>
+<br>
+<div id="form_field">
+  <%= form_tag merchant_coupon_path(@coupon), method: :patch do %>
+    <label><%= label_tag :name %></label><br>
+    <input class="form-control"<%= text_field_tag :name, @coupon.name %><br>
+
+    <label><%= label_tag :amount %></label><br>
+    <input class="form-control"<%= text_field_tag :amount, @coupon.amount %><br>
+
+    <input class="form-control"<%= submit_tag 'Update Coupon' %>
+  <% end %>
+</div>
