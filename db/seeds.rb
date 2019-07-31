@@ -5,13 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Coupon.destroy_all
 User.destroy_all
 Item.destroy_all
 Merchant.destroy_all
 Address.destroy_all
 megan = Merchant.create!(name: 'Megans Marmalades', address: '123 Main St', city: 'Denver', state: 'CO', zip: 80218)
 brian = Merchant.create!(name: 'Brians Bagels', address: '125 Main St', city: 'Denver', state: 'CO', zip: 80218)
+megan.coupons.create!(name: "marma10", amount: 10)
+megan.coupons.create!(name: "marma20", amount: 20)
+megan.coupons.create!(name: "marma30", amount: 30)
 User.create!(email: "admin@gmail.com", password: "password", name: "Admin", role: 2)
 User.create!(email: "user@gmail.com", password: "password", name: "Basic B", role: 1)
 megan.users.create!(email: "merchant_admin@gmail.com", password: "password", name: "Merchant's Top Dog", role: 1)

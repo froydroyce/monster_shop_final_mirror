@@ -18,7 +18,7 @@ RSpec.describe 'As a merchant' do
         within "#coupon-#{@marma_10.id}" do
           click_button 'Delete'
         end
-        save_and_open_page
+
         expect(current_path).to eq(merchant_coupons_path)
 
         expect(page).to have_content("#{@marma_10.name} has been deleted.")

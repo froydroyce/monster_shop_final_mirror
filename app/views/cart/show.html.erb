@@ -1,8 +1,23 @@
 <h2>My Cart</h2>
+
 <% if cart.items.empty? %>
   <p>Your Cart is Empty!</p>
 <% else %>
-<h3>Total: <%= number_to_currency(cart.grand_total) %></h3>
+
+<div id="form_field">
+  <%= form_tag cart_coupon_path, method: :patch do %>
+    <label><%= label_tag :coupon_name, 'Coupon' %></label><br>
+    <input class="form-control"<%= text_field_tag :coupon_name %>
+    <input class="form-control"<%= submit_tag 'Apply Coupon' %>
+  <% end %>
+</div>
+<br>
+<h3>Total: <%= number_to_currency(cart.grand_total) %></h3><br>
+
+<% unless cart.coupon.empty? %>
+  <h3>Discounted Total: <%= number_to_currency(cart.discounted_total) %></h3><br>
+<% end %>
+
   <% cart.items.each do |item| %>
     <section id='item-<%= item.id%>'>
       <div id="align_right"
