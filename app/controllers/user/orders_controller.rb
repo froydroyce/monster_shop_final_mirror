@@ -20,13 +20,13 @@ class User::OrdersController < User::BaseController
     address = current_user.find_address_by_name(order_params[:address_id]).first
     order = current_user.orders.new(address_id: address.id)
     order.save
-      cart.items.each do |item|
-        order.order_items.create({
-          item: item,
-          quantity: cart.count_of(item.id),
-          price: item.price
-          })
-      end
+    cart.items.each do |item|
+      order.order_items.create({
+        item: item,
+        quantity: cart.count_of(item.id),
+        price: item.price
+        })
+    end
     session.delete(:cart)
     flash[:notice] = "Order created successfully!"
     redirect_to '/profile/orders'
