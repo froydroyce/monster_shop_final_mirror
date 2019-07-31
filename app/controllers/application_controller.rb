@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
                 :current_admin?
 
   def cart
-    @cart ||= Cart.new(session[:cart])
+    @cart ||= Cart.new(session[:cart], session[:coupon])
   end
 
   def current_user

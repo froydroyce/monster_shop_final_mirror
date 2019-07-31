@@ -1,9 +1,10 @@
 class Cart
-  attr_reader :contents
+  attr_reader :contents, :coupon
 
-  def initialize(contents)
+  def initialize(contents, coupon)
     @contents = contents || {}
     @contents.default = 0
+    @coupon = coupon || {}
   end
 
   def add_item(item_id)
@@ -42,5 +43,14 @@ class Cart
 
   def limit_reached?(item_id)
     count_of(item_id) == Item.find(item_id).inventory
+  end
+
+  def discounted_total
+    coupon = Coupon.find(@coupon["coupon_id"])
+    grand_total - coupon.amount
+  end
+
+  def apply_coupon(coupon)
+    @coupon["coupon_id"] = coupon.id
   end
 end

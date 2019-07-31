@@ -1,6 +1,6 @@
 class CartController < ApplicationController
   before_action :exclude_admin
-  
+
   def add_item
     item = Item.find(params[:item_id])
     session[:cart] ||= {}
@@ -35,6 +35,18 @@ class CartController < ApplicationController
       return remove_item if cart.count_of(params[:item_id]) == 0
     end
     session[:cart] = cart.contents
+    redirect_to '/cart'
+  end
+
+  def apply_coupon
+    coupon = Coupon.find_by(name: params[:coupon_name])
+    if coupon.nil?
+      flash[:alert] = "#{params[:coupon_name]} is not a valid coupon."
+    else
+      cart.apply_coupon(coupon)
+      session[:coupon] = cart.coupon
+      flash[:notice] = "#{params[:coupon_name]} has been applied."
+    end
     redirect_to '/cart'
   end
 end
